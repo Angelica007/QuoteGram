@@ -1,1 +1,15 @@
-<p>vote works!</p>
+<div>
+    <hr>
+    <div class="row">
+        <ul>
+        <div *ngFor='let tick of insta;let i = index'>
+          <li>{{tick.quote}}</li>
+          <button (click)='toggleDetails(i)' class="btn btn-warning">More</button>
+          <app-vote-detail *ngIf='tick.showQuote' [tick]='insta' (isComplete) = 'deleteLike($event,i)'></app-vote-detail>
+        </div>
+      </ul>
+    </div>
+    <div>
+        <app-vote-form (addLike)="addNewLike($event)"></app-vote-form>
+      </div>
+  </div>

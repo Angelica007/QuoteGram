@@ -1,4 +1,6 @@
 export class Like {
-    id: number;
-    quote:string;
+  showQuote: boolean;
+  constructor(public id: number,public name: string,public quote: string){
+    this.showQuote=false;
+  }
   }
