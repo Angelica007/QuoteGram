@@ -8,13 +8,14 @@ import { Like } from '../like';
 })
 export class VoteFormComponent implements OnInit {
 
-  @Output() addlike = new EventEmitter<Like>();
-  newLike: Like;
+  newLike = new Like(0,"","",new Date()); 
+  @Output() addLike = new EventEmitter<Like>();
   
 
   submitLike(){
-    this.addlike.emit(this.newLike);
+    this.addLike.emit(this.newLike);
       }
+   
   constructor() { }
 
   ngOnInit() {

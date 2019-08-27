@@ -20,6 +20,12 @@ export class VoteComponent implements OnInit {
     this.insta[index].showQuote = !this.insta[index].showQuote;
   }
 
+  completeLike(isComplete, index){
+    if (isComplete) {
+      this.insta.splice(index,1);
+    }
+  }
+
   deleteLike(isComplete, index){
     if (isComplete) {
       let toDelete = confirm(`Are you sure you want to delete ${this.insta[index].quote}?`)
@@ -30,7 +36,7 @@ export class VoteComponent implements OnInit {
     }
   }
 
-  addNewLike(tick: any){
+  addNewLike(tick){
     let tickLength = this.insta.length;
     tick.id = tickLength+1;
     tick.completeDate = new Date(tick.completeDate)
