@@ -4,7 +4,7 @@
         <ul>
         <div *ngFor='let tick of insta;let i = index'>
           <div>
-            <li>{{tick.quote}}</li>
+            <h5>{{tick.quote}}</h5>
           <button (click)='toggleDetails(i)' class="btn btn-warning">More</button>
           </div>
           <div *ngIf='tick.showQuote'>
