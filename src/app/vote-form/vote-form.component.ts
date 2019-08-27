@@ -10,6 +10,7 @@ export class VoteFormComponent implements OnInit {
 
   @Output() addlike = new EventEmitter<Like>();
   newLike: Like;
+  
 
   submitLike(){
     this.addlike.emit(this.newLike);
